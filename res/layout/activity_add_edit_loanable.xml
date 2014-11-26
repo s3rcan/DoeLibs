@@ -1,0 +1,96 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.groupd2.doelibs.AddEditLoanableActivity" >
+
+    <include layout="@layout/searchbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:orientation="vertical" >
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="5dp"
+            android:background="#FF000000" />
+
+        <TextView
+            style="@style/headerText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/loanableInfo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0px"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:paddingLeft="20dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/generalTextView"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/location" />
+
+                <EditText
+                    android:id="@+id/editTextloanableLocation"
+                    style="@style/generalEditText"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:hint="@string/location"
+                    android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal" >
+
+                <TextView
+                    style="@style/generalTextView"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/sublocation" />
+
+                <EditText
+                    android:id="@+id/editTextloanableSublocation"
+                    style="@style/generalEditText"
+                    android:layout_width="0px"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="2"
+                    android:hint="@string/sublocation"
+                    android:inputType="number" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/buttonAddEditLoanable"
+            style="@style/generalButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onResult"
+            android:text="" />
+    </LinearLayout>
+
+</LinearLayout>

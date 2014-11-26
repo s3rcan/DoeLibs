@@ -1,5 +1,7 @@
 package com.groupd2.doelibs;
 
+import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends ActivityWithSearchBar {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

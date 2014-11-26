@@ -33,8 +33,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_weight="1"
-                android:inputType="number"
-                android:hint="@string/loanable_tag" />
+                android:hint="@string/loanable_tag"
+                android:inputType="number" />
 
             <Button
                 android:id="@+id/buttonReturnOK"
@@ -55,58 +55,119 @@
             android:text="@string/scanTag" />
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:id="@+id/layoutReturnLoanInfo"
         android:layout_width="match_parent"
         android:layout_height="0px"
-        android:layout_weight="1"
-        android:gravity="center_vertical"
-        android:orientation="vertical" >
+        android:layout_weight="1" >
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
+            android:gravity="center_vertical"
             android:orientation="vertical" >
 
             <TextView
-                style="@style/generalTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/loanableTitle" />
-
-            <EditText
-                android:id="@+id/textReturnTitleName"
-                style="@style/generalEditText"
+                style="@style/headerText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:inputType="none" />
-        </LinearLayout>
+                android:text="@string/loanableInfo" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="20sp"
-            android:orientation="vertical" >
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="#FF000000" />
 
-            <TextView
-                style="@style/generalTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:text="@string/currentBorrower" />
-
-            <EditText
-                android:id="@+id/textReturnBorrowerName"
-                style="@style/generalEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20sp"
-                android:inputType="none" />
+                android:layout_marginBottom="10sp"
+                android:orientation="vertical"
+                android:paddingLeft="20sp" >
+
+                <TextView
+                    style="@style/generalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/currentBorrower" />
+
+                <EditText
+                    android:id="@+id/textReturnBorrowerName"
+                    style="@style/nonEditableEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:orientation="vertical"
+                android:paddingLeft="20sp" >
+
+                <TextView
+                    style="@style/generalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/loanableTitle" />
+
+                <EditText
+                    android:id="@+id/textReturnTitleName"
+                    style="@style/nonEditableEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:orientation="vertical"
+                android:paddingLeft="20sp" >
+
+                <TextView
+                    style="@style/generalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/location" />
+
+                <EditText
+                    android:id="@+id/textReturnLoanableLocation"
+                    style="@style/nonEditableEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10sp"
+                android:orientation="vertical"
+                android:paddingLeft="20sp" >
+
+                <TextView
+                    style="@style/generalTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="@string/sublocation" />
+
+                <EditText
+                    android:id="@+id/textReturnLoanableSublocation"
+                    style="@style/nonEditableEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20sp" />
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/buttonReturnReturn"

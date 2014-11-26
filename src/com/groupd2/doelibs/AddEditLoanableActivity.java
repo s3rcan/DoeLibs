@@ -3,6 +3,7 @@ package com.groupd2.doelibs;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -30,6 +31,9 @@ public class AddEditLoanableActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_add_edit_loanable);
 
+		location = (EditText) findViewById(R.id.editTextloanableLocation);
+		sublocation = (EditText) findViewById(R.id.editTextloanableSublocation);
+		
 		Intent intent = getIntent();
 		mode = intent.getIntExtra("Mode", MODE_ADD);
 

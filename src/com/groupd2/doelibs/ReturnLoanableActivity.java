@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 public class ReturnLoanableActivity extends Activity {
@@ -15,8 +16,10 @@ public class ReturnLoanableActivity extends Activity {
 	private EditText tag;
 	private EditText loanableTitle;
 	private EditText currentBorrower;
+	private EditText location;
+	private EditText sublocation;
 	private Button returnButton;
-	private LinearLayout loanableInfo;
+	private ScrollView loanableInfo;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +30,9 @@ public class ReturnLoanableActivity extends Activity {
 		loanableTitle = (EditText) findViewById(R.id.textReturnTitleName);
 		currentBorrower = (EditText) findViewById(R.id.textReturnBorrowerName);
 		returnButton = (Button) findViewById(R.id.buttonReturnReturn);
-		loanableInfo = (LinearLayout) findViewById(R.id.layoutReturnLoanInfo);
+		loanableInfo = (ScrollView) findViewById(R.id.layoutReturnLoanInfo);
+		location = (EditText) findViewById(R.id.textReturnLoanableLocation);
+		sublocation = (EditText) findViewById(R.id.textReturnLoanableSublocation);
 		
 		/*tag.setOnEditorActionListener(new OnEditorActionListener() {
 			
@@ -80,6 +85,9 @@ public class ReturnLoanableActivity extends Activity {
 		
 		loanableTitle.setText("Book Name"); //set name here
 		currentBorrower.setText("Borrower Name"); //set name here
+		location.setText("Location"); // set location here
+		sublocation.setText("Sublocation"); // set sublocation here
+		
 
 		//@else not valid
 		Toast.makeText(this, "Tag is not valid!", Toast.LENGTH_SHORT).show();

@@ -11,5 +11,12 @@
     <string name="loanableTitle">Title</string>
     <string name="currentBorrower">Current Borrower</string>
     <string name="returnText">Return</string>
-
+    <string name="title_activity_add_edit_loanable">AddEditLoanableActivity</string>
+    <string name="titleAddLoanable">Add Loanable</string>
+    <string name="titleEditLoanable">Edit Loanable</string>
+    <string name="loanableInfo">Loanable Info</string>
+    <string name="location">Location</string>
+	<string name="sublocation">Sublocation</string>
+	<string name="add">Add</string>
+	<string name="edit">Edit</string>
 </resources>

@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".MyBorrowingsActivity"
+            android:label="@string/title_activity_my_borrowings" >
+        </activity>
+        <activity
             android:name=".ReturnLoanableActivity"
             android:label="@string/title_activity_return_loanable" >
         </activity>

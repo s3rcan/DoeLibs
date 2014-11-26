@@ -25,15 +25,18 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f08000c;
+        public static final int action_settings=0x7f08000f;
         public static final int buttonAddEditLoanable=0x7f080002;
         public static final int buttonReturnOK=0x7f080004;
         public static final int buttonReturnReturn=0x7f08000b;
         public static final int buttonReturnScanTag=0x7f080005;
+        public static final int buttonSearch=0x7f08000e;
+        public static final int editTextSearchBar=0x7f08000d;
         public static final int editTextloanableLocation=0x7f080000;
         public static final int editTextloanableSublocation=0x7f080001;
         public static final int editTextloanableTag=0x7f080003;
         public static final int layoutReturnLoanInfo=0x7f080006;
+        public static final int layoutSearchBar=0x7f08000c;
         public static final int textReturnBorrowerName=0x7f080007;
         public static final int textReturnLoanableLocation=0x7f080009;
         public static final int textReturnLoanableSublocation=0x7f08000a;
@@ -43,6 +46,7 @@ public final class R {
         public static final int activity_add_edit_loanable=0x7f030000;
         public static final int activity_main=0x7f030001;
         public static final int activity_return_loanable=0x7f030002;
+        public static final int searchbar=0x7f030003;
     }
     public static final class menu {
         public static final int add_edit_loanable=0x7f070000;
@@ -63,6 +67,8 @@ public final class R {
         public static final int location=0x7f05000e;
         public static final int returnText=0x7f050009;
         public static final int scanTag=0x7f050006;
+        public static final int search=0x7f050013;
+        public static final int searchBar=0x7f050012;
         public static final int sublocation=0x7f05000f;
         public static final int titleAddLoanable=0x7f05000b;
         public static final int titleEditLoanable=0x7f05000c;

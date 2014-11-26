@@ -1,6 +1,5 @@
 package com.groupd2.doelibs;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -9,20 +8,26 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class AddEditLoanableActivity extends Activity {
+import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
+
+public class AddEditLoanableActivity extends ActivityWithSearchBar {
 	public static final int MODE_ADD = 0;
 	public static final int MODE_EDIT = 1;
 
+	@SuppressWarnings("unused")
 	private EditText location;
+	@SuppressWarnings("unused")
 	private EditText sublocation;
 	private Button resultButton;
 
 	private int mode;
 	
 	// MODE ADD
+	@SuppressWarnings("unused")
 	private int titleID;
 
 	// MODE EDIT
+	@SuppressWarnings("unused")
 	private int loanableID;
 
 	@Override

@@ -1,6 +1,5 @@
 package com.groupd2.doelibs;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -11,7 +10,9 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
-public class ReturnLoanableActivity extends Activity {
+import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
+
+public class ReturnLoanableActivity extends ActivityWithSearchBar {
 
 	private EditText tag;
 	private EditText loanableTitle;

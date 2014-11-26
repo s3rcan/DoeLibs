@@ -16,17 +16,17 @@
         android:layout_marginTop="@dimen/activity_vertical_margin"
         android:orientation="vertical" >
 
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="5dp"
-            android:background="#FF000000" />
-
         <TextView
             style="@style/headerText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/loanableInfo" />
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="5dp"
+            android:background="#FF000000" />
 
         <LinearLayout
             android:layout_width="match_parent"

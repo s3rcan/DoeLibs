@@ -2,16 +2,14 @@ package com.groupd2.doelibs;
 
 import java.util.ArrayList;
 
-import android.R.string;
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TwoLineListItem;
 
-public class MyBorrowingsActivity extends Activity {
+import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
+
+public class MyBorrowingsActivity extends ActivityWithSearchBar {
 
 	
 	ArrayList<StringTuple> _myBorrowings;

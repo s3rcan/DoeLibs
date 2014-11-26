@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ReturnLoanableActivity"
+            android:label="@string/title_activity_return_loanable" >
+        </activity>
+        <activity
+            android:name=".AddEditLoanableActivity"
+            android:label="@string/title_activity_add_edit_loanable" >
+        </activity>
     </application>
 
 </manifest>

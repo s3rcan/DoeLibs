@@ -10,6 +10,7 @@ import android.widget.EditText;
 
 import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 
+@SuppressWarnings(value = { "unused" })
 public class AddEditTitleActivity extends ActivityWithSearchBar {
 	public static final int MODE_ADD = 0;
 	public static final int MODE_EDIT = 1;
@@ -27,7 +28,6 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 	private int mode;
 
 	// MODE EDIT
-	@SuppressWarnings("unused")
 	private int bookID;
 
 	@Override

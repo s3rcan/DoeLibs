@@ -1,5 +1,6 @@
 package com.groupd2.doelibs;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,6 +11,8 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.Toast;
 
+import com.google.zxing.integration.IntentIntegrator;
+import com.google.zxing.integration.IntentResult;
 import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 
 public class ReturnLoanableActivity extends ActivityWithSearchBar {
@@ -97,8 +100,26 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 	public void onScanTag(View btn){
 		setInfoVisibilty(false);
 		//implement scan algorithm here
+		IntentIntegrator integrator = new IntentIntegrator(this);
+		integrator.initiateScan();
 		
 		tag.setText("0"); // set text here
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if (requestCode==IntentIntegrator.REQUEST_CODE)
+		{
+		    IntentResult scanResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+		    if (scanResult != null)
+		    {
+		    	tag.setText(scanResult.toString());
+		    }
+		    else
+		    {
+		        Toast.makeText(this, "Unable to read barcode!", Toast.LENGTH_SHORT).show();
+		    }
+		}
 	}
 	
 	public void onReturn(View btn){

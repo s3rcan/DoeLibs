@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 public class TwoLineAdapter extends ArrayAdapter<StringTuple> {
 
+	@SuppressWarnings("unused")
 	private Context context;
 	private ArrayList<StringTuple> values;
 	

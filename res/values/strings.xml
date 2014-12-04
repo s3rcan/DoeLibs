@@ -33,5 +33,6 @@
     <string name="editionNo">Edition No</string>
     <string name="editionYear">Edition Year</string>
     <string name="yearOfFirstEdition">Year of First Edition</string>
-    
+    <string name="title_activity_login">Login</string>
+
 </resources>

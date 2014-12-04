@@ -49,3 +49,4 @@ public class TwoLineAdapter extends ArrayAdapter<StringTuple> {
 	}
 
 }
+

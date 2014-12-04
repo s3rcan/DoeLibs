@@ -24,32 +24,6 @@ public class MyBorrowingsActivity extends ActivityWithSearchBar {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_borrowings);
 
-		// _myReservations = new ArrayList<StringTuple>();
-		//
-		// _myReservations.add(new
-		// StringTuple("Reservation 1","Reserved: 2014-01-01"));
-		// _myReservations.add(new StringTuple("Reservation 2",
-		// "Reserved: 2014-02-02"));
-		//
-		// _myBorrowings.add(new StringTuple("Borrowing 1",
-		// "Expires: 2014-12-14"));
-		// _myBorrowings.add(new
-		// StringTuple("Borrowing 2","Expires 2014-11-30"));
-		//
-		// TwoLineAdapter myReservationsAdapter = new TwoLineAdapter(this,
-		// _myReservations);
-		// TwoLineAdapter myBorrowingsAdapter = new TwoLineAdapter(this,
-		// _myBorrowings);
-		//
-		//
-		// ListView myReservationsList = (ListView)
-		// findViewById(R.id.listViewMyReservations);
-		// ListView myBorrowingsList = (ListView)
-		// findViewById(R.id.listViewMyBorrowings);
-		//
-		// myReservationsList.setAdapter(myReservationsAdapter);
-		// myBorrowingsList.setAdapter(myBorrowingsAdapter);
-		
 		
 		getBorrowings();
 		getReservations();

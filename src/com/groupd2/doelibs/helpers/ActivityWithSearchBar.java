@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.groupd2.doelibs.MyBorrowingsActivity;
+import com.groupd2.doelibs.MyInventoryActivity;
 import com.groupd2.doelibs.R;
 
 public class ActivityWithSearchBar extends Activity {
@@ -47,15 +48,21 @@ public class ActivityWithSearchBar extends Activity {
 	}
 	
 	public boolean onOptionsItemSelected(MenuItem item, Class<?> cls) {
+		
+		Intent intent;
 		switch (item.getItemId()) {
 		case R.id.menuMyBorrowings:
 			if (cls == MyBorrowingsActivity.class)
 				return true;
-			Intent intent = new Intent(this, MyBorrowingsActivity.class);
+			intent = new Intent(this, MyBorrowingsActivity.class);
 			startActivity(intent);
 			return true;
 		case R.id.menuMyInventory:
-			// TODO redirect to my inventory
+			if(cls == MyInventoryActivity.class)
+				return true;
+			
+			intent = new Intent(this, MyInventoryActivity.class);
+			startActivity(intent);
 			return true;
 		case R.id.menuLogout:
 			// TODO logout

@@ -1,5 +1,6 @@
 package com.groupd2.doelibs;
 
+
 import java.util.ArrayList;
 
 import android.content.Context;
@@ -8,13 +9,12 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class TwoLineAdapter extends ArrayAdapter<StringTuple> {
-
+public class BorrowingAdapter extends ArrayAdapter<Borrowing> {
 	@SuppressWarnings("unused")
 	private Context context;
-	private ArrayList<StringTuple> values;
+	private ArrayList<Borrowing> values;
 	
-	public TwoLineAdapter(Context context, ArrayList<StringTuple> values) {
+	public BorrowingAdapter(Context context, ArrayList<Borrowing> values) {
 		super(context,R.layout.listview_twoline,R.id.Title,values);
 		this.context = context;
 		this.values = values;
@@ -26,7 +26,7 @@ public class TwoLineAdapter extends ArrayAdapter<StringTuple> {
 	}
 
 	@Override
-	public StringTuple getItem(int position) {
+	public Borrowing getItem(int position) {
 		return values.get(position);
 	}
 
@@ -42,11 +42,9 @@ public class TwoLineAdapter extends ArrayAdapter<StringTuple> {
 		TextView text1 = (TextView)view.findViewById(R.id.Title);
 		TextView text2 = (TextView)view.findViewById(R.id.Subtitle);
 		
-		text1.setText(values.get(position).getString1());
-		text2.setText(values.get(position).getString2());
+		text1.setText(values.get(position).getTitle());
+		text2.setText("Expires: " + values.get(position).getExpiresAsString());
 		
 		return view;
 	}
-
 }
-

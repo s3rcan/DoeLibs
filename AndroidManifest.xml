@@ -40,6 +40,10 @@
             android:name=".AddEditTitleActivity"
             android:label="@string/title_activity_add_edit_title" >
         </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
     </application>
 
 </manifest>

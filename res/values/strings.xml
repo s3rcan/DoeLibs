@@ -36,5 +36,5 @@
     <string name="myBorrowings">My Borrowings</string>
     <string name="myInventory">My Inventory</string>
     <string name="logout">Logout</string>
-    
+    <string name="title_activity_login">Login</string>
 </resources>

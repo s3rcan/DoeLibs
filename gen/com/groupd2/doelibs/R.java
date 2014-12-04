@@ -56,6 +56,9 @@ public final class R {
         public static final int listViewMyBorrowings=0x7f090010;
         public static final int listViewMyReservations=0x7f09000f;
         public static final int loginButton=0x7f09000d;
+        public static final int menuLogout=0x7f090023;
+        public static final int menuMyBorrowings=0x7f090021;
+        public static final int menuMyInventory=0x7f090022;
         public static final int textReturnBorrowerName=0x7f090015;
         public static final int textReturnLoanableLocation=0x7f090017;
         public static final int textReturnLoanableSublocation=0x7f090018;
@@ -75,10 +78,11 @@ public final class R {
     public static final class menu {
         public static final int add_edit_loanable=0x7f080000;
         public static final int add_edit_title=0x7f080001;
-        public static final int login=0x7f080002;
-        public static final int main=0x7f080003;
-        public static final int my_borrowings=0x7f080004;
-        public static final int return_loanable=0x7f080005;
+        public static final int doelibs_menu=0x7f080002;
+        public static final int login=0x7f080003;
+        public static final int main=0x7f080004;
+        public static final int my_borrowings=0x7f080005;
+        public static final int return_loanable=0x7f080006;
     }
     public static final class string {
         public static final int ISBN=0x7f060019;
@@ -97,6 +101,9 @@ public final class R {
         public static final int loanableTitle=0x7f060008;
         public static final int loanable_tag=0x7f060005;
         public static final int location=0x7f06000f;
+        public static final int logout=0x7f060022;
+        public static final int myBorrowings=0x7f060020;
+        public static final int myInventory=0x7f060021;
         public static final int publisher=0x7f06001c;
         public static final int returnText=0x7f06000a;
         public static final int scanTag=0x7f060007;
@@ -110,7 +117,7 @@ public final class R {
         public static final int title_activity_add_edit_title=0x7f060015;
         public static final int title_activity_add_title=0x7f060017;
         public static final int title_activity_edit_title=0x7f060016;
-        public static final int title_activity_login=0x7f060020;
+        public static final int title_activity_login=0x7f060023;
         public static final int title_activity_my_borrowings=0x7f060003;
         public static final int title_activity_return_loanable=0x7f060004;
         public static final int yearOfFirstEdition=0x7f06001f;

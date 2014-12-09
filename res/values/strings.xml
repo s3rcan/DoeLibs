@@ -38,8 +38,6 @@
     <string name="logout">Logout</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_my_inventory">MyInventoryActivity</string>
-    <string name="scan">Scan</string>
-
     <string name="title_activity_search">SearchActivity</string>
     <string name="mainMenu">Main Menu</string>
 

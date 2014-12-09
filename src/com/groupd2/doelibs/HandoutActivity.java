@@ -10,13 +10,13 @@ public class HandoutActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_handout);
+		//setContentView(R.layout.activity_handout);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.handout, menu);
+		//getMenuInflater().inflate(R.menu.handout, menu);
 		return true;
 	}
 

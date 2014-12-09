@@ -50,7 +50,7 @@
                         style="@style/generalTextView"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1"
+                        android:layout_weight="3"
                         android:text="@string/ISBN" />
 
                     <EditText
@@ -59,9 +59,17 @@
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_weight="2"
+                        android:layout_weight="4"
                         android:hint="@string/ISBN"
                         android:inputType="text" />
+                    <Button
+                        android:id="@+id/scanISBN"
+                        style="@style/generalButton"
+                        android:layout_width="0px"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:onClick="onScan"
+                        android:text="@string/scan" />
                 </LinearLayout>
 
                 <LinearLayout

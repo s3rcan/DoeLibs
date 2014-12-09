@@ -1,5 +1,7 @@
 package com.groupd2.doelibs;
 
+import org.json.JSONObject;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -7,27 +9,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
+import com.groupd2.doelibs.helpers.CallAPI;
+import com.groupd2.doelibs.helpers.TokenHelper;
+import com.groupd2.doelibs.models.Loanable;
 
 public class AddEditLoanableActivity extends ActivityWithSearchBar {
 	public static final int MODE_ADD = 0;
 	public static final int MODE_EDIT = 1;
 
-	@SuppressWarnings("unused")
 	private EditText location;
-	@SuppressWarnings("unused")
 	private EditText sublocation;
 	private Button resultButton;
 
 	private int mode;
-	
+
 	// MODE ADD
-	@SuppressWarnings("unused")
 	private int titleID;
 
 	// MODE EDIT
-	@SuppressWarnings("unused")
 	private int loanableID;
 
 	@Override
@@ -38,7 +40,7 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 		location = (EditText) findViewById(R.id.editTextloanableLocation);
 		sublocation = (EditText) findViewById(R.id.editTextloanableSublocation);
 		resultButton = (Button) findViewById(R.id.buttonAddEditLoanable);
-		
+
 		Intent intent = getIntent();
 		mode = intent.getIntExtra("MODE", MODE_ADD);
 
@@ -46,34 +48,92 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 			setTitle(this.getText(R.string.titleAddLoanable));
 			resultButton.setText(this.getText(R.string.add));
 			// get title id extra and stuff
+			titleID = Integer.parseInt(intent.getStringExtra("titleID"));
 		} else if (mode == MODE_EDIT) {
-			setTitle(this.getText(R.string.titleEditLoanable));// Title name can
-																// be set here
+			setTitle(this.getText(R.string.titleEditLoanable));
 			resultButton.setText(this.getText(R.string.edit));
-			// get loanable id extra and fill existing data
+			// get loanable id extra
+			loanableID = Integer.parseInt(intent.getStringExtra("loanableId"));
+
+			// fill existing data
+			CallAPI callAPI = new CallAPI() {
+				@Override
+				protected void onPostExecute(String result) {
+					try {
+						JSONObject jObject = new JSONObject(result)
+								.getJSONObject("loanable");
+						Loanable loanable = new Loanable(jObject);
+
+						location.setText(loanable.getLocation());
+						sublocation.setText(loanable.getSubLocation());
+
+					} catch (Exception e) {
+						Toast.makeText(AddEditLoanableActivity.this,
+								e.getMessage(), Toast.LENGTH_LONG).show();
+						finish();
+					}
+
+				};
+			};
+			callAPI.execute("http://www.itutbildning.nu:10000/api/Loanable?token="
+					+ TokenHelper.getToken(AddEditLoanableActivity.this)
+					+ "&id=" + loanableID);
 		}
 
 	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		return super.onCreateOptionsMenu(menu);
+	}
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 
 	public void onResult(View btn) {
+		String location = this.location.getText().toString();
+		String sublocation = this.sublocation.getText().toString();
+
+		if (location == null || location == "") {
+			Toast.makeText(this, "Please fill in info!", Toast.LENGTH_SHORT)
+					.show();
+			return;
+		}
 		if (mode == MODE_ADD) {
 			// add algorithm here
-			// make toast
-			// redirect
+			CallAPI callAPI = new CallAPI() {
+				@Override
+				protected void onPostExecute(String result) {
+					// TODO make toast
+					// redirect
+					finish();
+				};
+			};
+			callAPI.execute(
+					"http://www.itutbildning.nu:10000/api/Loanable?token="
+							+ TokenHelper
+									.getToken(AddEditLoanableActivity.this),
+					"Id=" + titleID, "Location=" + location, "SubLocation="
+							+ sublocation, "Mode=add");
 		} else if (mode == MODE_EDIT) {
-			// edit algorithm here
-			// make toast
-			// redirect
+
+			CallAPI callAPI = new CallAPI() {
+				@Override
+				protected void onPostExecute(String result) {
+					// TODO make toast
+					// redirect
+					finish();
+				};
+			};
+			callAPI.execute(
+					"http://www.itutbildning.nu:10000/api/Loanable?token="
+							+ TokenHelper
+									.getToken(AddEditLoanableActivity.this),
+					"Id=" + loanableID, "Location=" + location, "SubLocation="
+							+ sublocation, "Mode=edit");
+
 		}
 	}
 }

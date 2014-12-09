@@ -99,7 +99,10 @@ public class CallAPI extends AsyncTask<String, Void, String> {
 
 			for (int i = 1; i < params.length; i++) {
 				String[] str = params[i].split("=");
-				postParams.add(new BasicNameValuePair(str[0], str[1]));
+				if(str.length < 2)
+					postParams.add(new BasicNameValuePair(str[0], null));
+				else
+					postParams.add(new BasicNameValuePair(str[0], str[1]));
 			}
 			try {
 				httppost.setEntity(new UrlEncodedFormEntity(postParams, HTTP.UTF_8));

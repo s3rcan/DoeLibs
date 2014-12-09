@@ -28,18 +28,18 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int ListViewTwoLineLayout=0x7f09001b;
-        public static final int Subtitle=0x7f09001d;
-        public static final int Title=0x7f09001c;
-        public static final int action_settings=0x7f090021;
+        public static final int ListViewTwoLineLayout=0x7f09001c;
+        public static final int Subtitle=0x7f09001e;
+        public static final int Title=0x7f09001d;
+        public static final int action_settings=0x7f090022;
         public static final int buttonAddEditLoanable=0x7f090002;
         public static final int buttonAddEditTitle=0x7f09000a;
         public static final int buttonReturnOK=0x7f090013;
         public static final int buttonReturnReturn=0x7f09001a;
         public static final int buttonReturnScanTag=0x7f090014;
-        public static final int buttonSearch=0x7f090020;
+        public static final int buttonSearch=0x7f090021;
         public static final int editTextPassword=0x7f09000c;
-        public static final int editTextSearchBar=0x7f09001f;
+        public static final int editTextSearchBar=0x7f090020;
         public static final int editTextTitleAuthor=0x7f090005;
         public static final int editTextTitleEditionNo=0x7f090007;
         public static final int editTextTitleEditionYear=0x7f090008;
@@ -52,14 +52,16 @@ public final class R {
         public static final int editTextloanableSublocation=0x7f090001;
         public static final int editTextloanableTag=0x7f090012;
         public static final int layoutReturnLoanInfo=0x7f090015;
-        public static final int layoutSearchBar=0x7f09001e;
+        public static final int layoutSearchBar=0x7f09001f;
         public static final int listViewMyBorrowings=0x7f090010;
         public static final int listViewMyInventory=0x7f090011;
         public static final int listViewMyReservations=0x7f09000f;
+        public static final int listViewSearchResults=0x7f09001b;
         public static final int loginButton=0x7f09000d;
-        public static final int menuLogout=0x7f090024;
-        public static final int menuMyBorrowings=0x7f090022;
-        public static final int menuMyInventory=0x7f090023;
+        public static final int menuLogout=0x7f090026;
+        public static final int menuMainMenu=0x7f090023;
+        public static final int menuMyBorrowings=0x7f090024;
+        public static final int menuMyInventory=0x7f090025;
         public static final int textReturnBorrowerName=0x7f090016;
         public static final int textReturnLoanableLocation=0x7f090018;
         public static final int textReturnLoanableSublocation=0x7f090019;
@@ -74,8 +76,9 @@ public final class R {
         public static final int activity_my_borrowings=0x7f030004;
         public static final int activity_my_inventory=0x7f030005;
         public static final int activity_return_loanable=0x7f030006;
-        public static final int listview_twoline=0x7f030007;
-        public static final int searchbar=0x7f030008;
+        public static final int activity_search=0x7f030007;
+        public static final int listview_twoline=0x7f030008;
+        public static final int searchbar=0x7f030009;
     }
     public static final class menu {
         public static final int add_edit_loanable=0x7f080000;
@@ -86,6 +89,7 @@ public final class R {
         public static final int my_borrowings=0x7f080005;
         public static final int my_inventory=0x7f080006;
         public static final int return_loanable=0x7f080007;
+        public static final int search=0x7f080008;
     }
     public static final class string {
         public static final int ISBN=0x7f060019;
@@ -105,6 +109,7 @@ public final class R {
         public static final int loanable_tag=0x7f060005;
         public static final int location=0x7f06000f;
         public static final int logout=0x7f060022;
+        public static final int mainMenu=0x7f060026;
         public static final int myBorrowings=0x7f060020;
         public static final int myInventory=0x7f060021;
         public static final int publisher=0x7f06001c;
@@ -124,6 +129,7 @@ public final class R {
         public static final int title_activity_my_borrowings=0x7f060003;
         public static final int title_activity_my_inventory=0x7f060024;
         public static final int title_activity_return_loanable=0x7f060004;
+        public static final int title_activity_search=0x7f060025;
         public static final int yearOfFirstEdition=0x7f06001f;
     }
     public static final class style {

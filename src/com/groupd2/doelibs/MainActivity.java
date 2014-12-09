@@ -15,11 +15,14 @@ public class MainActivity extends ActivityWithSearchBar {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		TokenHelper.removeToken(this);
+		//TokenHelper.removeToken(this); //For testing login functionallity, clear tokencache
 
 		if (TokenHelper.getToken(this) == null) {
 			Login();
 		}
+		else
+			setContentView(R.layout.activity_main);
+
 	}
 @Override
     public boolean onCreateOptionsMenu(Menu menu) {

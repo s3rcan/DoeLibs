@@ -11,6 +11,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -18,22 +19,28 @@ import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 import com.groupd2.doelibs.helpers.CallAPI;
 import com.groupd2.doelibs.helpers.TokenHelper;
 
-public class MyInventoryActivity extends ActivityWithSearchBar {
+public class SearchActivity extends ActivityWithSearchBar {
 
-  private ArrayList<InventoryItem> _inventory;
-  
+  private ArrayList<SearchResult> _searchResults;
+  private String search;
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_my_inventory);
-    getInventory();
+    setContentView(R.layout.activity_search);
+    
+
+	Intent intent = getIntent();
+	search = intent.getStringExtra("search");
+
+    
+    performSearch();
   }
 
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
-    getMenuInflater().inflate(R.menu.my_inventory, menu);
-    return true;
+    return super.onCreateOptionsMenu(menu);
+    
   }
 
   @Override
@@ -48,48 +55,46 @@ public class MyInventoryActivity extends ActivityWithSearchBar {
     return super.onOptionsItemSelected(item);
   }
   
-  private void getInventory(){
+  private void performSearch(){
 
     CallAPI callAPI = new CallAPI() {
       @Override
       protected void onPostExecute(String result) {
         JSONArray jArray;
-        _inventory = new ArrayList<InventoryItem>();
+        _searchResults = new ArrayList<SearchResult>();
         try {
           jArray = new JSONArray(result);
           for (int i = 0; i < jArray.length(); i++) {
             JSONObject jObject = jArray.getJSONObject(i);
-            _inventory.add(new InventoryItem(jObject));
+            _searchResults.add(new SearchResult(jObject));
           }
 
         } catch (Exception e) {
         }
         
-        afterGetInventory();
+        afterPerformSearch();
       }
     };
 
-    callAPI.execute("http://www.itutbildning.nu:10000/api/Inventory?token="
-        + TokenHelper.getToken(this));
+    callAPI.execute("http://www.itutbildning.nu:10000/api/Search?token="
+        + TokenHelper.getToken(this) + "&search=" + search);
 
   }
   
-  private void afterGetInventory()
+  private void afterPerformSearch()
   {
-    InventoryAdapter adapter = new InventoryAdapter(this,
-        _inventory);
-    ListView list = (ListView) findViewById(R.id.listViewMyInventory);
+    SearchResultAdapter adapter = new SearchResultAdapter(this,_searchResults);
+    ListView list = (ListView) findViewById(R.id.listViewSearchResults);
     list.setAdapter(adapter);
     
     
     list.setOnItemClickListener(new OnItemClickListener(){
       @Override
       public void onItemClick(AdapterView<?>adapter, View v, int position, long id){
-        InventoryItem i = ((InventoryAdapter)adapter.getAdapter()).getItem(position);
-        Intent intent = new Intent(MyInventoryActivity.this,AddEditLoanableActivity.class);
-        intent.putExtra("MODE", AddEditLoanableActivity.MODE_EDIT);
-        intent.putExtra("loanableId", i.getTag());
-        startActivity(intent);
+        SearchResult i = ((SearchResultAdapter)adapter.getAdapter()).getItem(position);
+        //Add functionallity for navigating to search result details.
+        
+        Toast.makeText(SearchActivity.this, i.getTitle(), Toast.LENGTH_SHORT).show();
       }
 
     });

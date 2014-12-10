@@ -11,7 +11,7 @@ public class HandoutItem {
 	private String Room;
 	private String LocationCategory;
 	private String Tag;
-	
+	private String Reservation;
 	
 	public String getTitle() {
 		return Title;
@@ -28,6 +28,9 @@ public class HandoutItem {
 	public String getTag() {
 		return Tag;
 	}
+	public String getReservation(){
+		return Reservation;
+	}
 	
 	public HandoutItem() {
 		// TODO Auto-generated constructor stub
@@ -40,6 +43,7 @@ public class HandoutItem {
 			this.Room = jObject.getString("Room");
 			this.LocationCategory = jObject.getString("LocationCategory");
 			this.Tag = jObject.getString("Tag");
+			this.Reservation = jObject.getString("Reservation");
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

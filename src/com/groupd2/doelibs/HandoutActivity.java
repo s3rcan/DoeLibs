@@ -112,9 +112,18 @@ public class HandoutActivity extends ActivityWithSearchBar {
 
 		list.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> adapter, View v,
+			public void onItemClick(AdapterView<?> adapte, View v,
 					int position, long id) {
-
+				HandoutItem item = adapter.getItem(position);
+				Intent intent = new Intent(HandoutActivity.this, HandoutDetailsActivity.class);
+				intent.putExtra("title",item.getTitle());
+				intent.putExtra("room",item.getRoom());
+				intent.putExtra("locationCategory",item.getLocationCategory());
+				intent.putExtra("tag",item.getTag());
+				intent.putExtra("borrower", item.getBorrower());
+				intent.putExtra("reservation", item.getReservation());
+				
+				startActivityForResult(intent, 10);
 			}
 
 		});
@@ -123,5 +132,12 @@ public class HandoutActivity extends ActivityWithSearchBar {
 		String BorrowerName=intent.getStringExtra("Extra_Borrower");
 		filterText.setText(BorrowerName);
 	}
+
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		if(requestCode == 10)
+			finish();
+	}
+	
 
 }

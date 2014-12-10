@@ -40,7 +40,12 @@
     <string name="title_activity_my_inventory">MyInventoryActivity</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="mainMenu">Main Menu</string>
-
     <string name="scan">Scan</string>
+    <string name="title_activity_book_info">Book Info</string>
+    <string name="reservations">Reservations</string>
+    <string name="loanables">Loanables</string>
+    <string name="editTitle">Edit Title</string>
+    <string name="reserve">Reserve</string>
+    <string name="addLoanable">Add Loanable</string>
 
 </resources>

@@ -73,7 +73,7 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 				@Override
 				protected void onPostExecute(String result) {
 					try {
-						JSONObject jObject = new JSONObject(result).getJSONObject("book");
+						JSONObject jObject = new JSONObject(result);
 						Book book = new Book(jObject);
 						
 						ISBN.setText(book.getISBN());

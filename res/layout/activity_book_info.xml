@@ -1,0 +1,292 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.groupd2.doelibs.BookInfoActivity" >
+
+    <include layout="@layout/searchbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/headerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/bookInfo" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="#FF000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0px"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingLeft="20dp" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/generalTextView"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/ISBN" />
+
+                    <EditText
+                        android:id="@+id/editTextTitleISBN"
+                        style="@style/generalEditText"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:hint="@string/ISBN"
+                        android:inputType="none" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/generalTextView"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/title" />
+
+                    <EditText
+                        android:id="@+id/editTextTitleTitle"
+                        style="@style/generalEditText"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:hint="@string/title"
+                        android:inputType="none" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/generalTextView"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/author" />
+
+                    <EditText
+                        android:id="@+id/editTextTitleAuthor"
+                        style="@style/generalEditText"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:hint="@string/author"
+                        android:inputType="none" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/generalTextView"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/publisher" />
+
+                    <EditText
+                        android:id="@+id/editTextTitlePublisher"
+                        style="@style/generalEditText"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:hint="@string/publisher"
+                        android:inputType="none" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/generalTextView"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/editionNo" />
+
+                    <EditText
+                        android:id="@+id/editTextTitleEditionNo"
+                        style="@style/generalEditText"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:hint="@string/editionNo"
+                        android:inputType="none" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/generalTextView"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/editionYear" />
+
+                    <EditText
+                        android:id="@+id/editTextTitleEditionYear"
+                        style="@style/generalEditText"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:hint="@string/editionYear"
+                        android:inputType="none" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        style="@style/generalTextView"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/yearOfFirstEdition" />
+
+                    <EditText
+                        android:id="@+id/editTextTitleYearOfFirstEdition"
+                        style="@style/generalEditText"
+                        android:layout_width="0px"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="2"
+                        android:clickable="false"
+                        android:hint="@string/yearOfFirstEdition"
+                        android:inputType="none" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                style="@style/headerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reservations" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="#FF000000" />
+
+            <com.groupd2.doelibs.helpers.NonScrollableListView
+                android:id="@+id/nonScrollableListBookInfoReservations"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </com.groupd2.doelibs.helpers.NonScrollableListView>
+
+            <TextView
+                style="@style/headerText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/loanables" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="5dp"
+                android:background="#FF000000" />
+
+            <com.groupd2.doelibs.helpers.NonScrollableListView
+                android:id="@+id/nonScrollableListBookInfoLoanables"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </com.groupd2.doelibs.helpers.NonScrollableListView>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" >
+
+        <Button
+            android:id="@+id/buttonEditTitle"
+            style="@style/generalButton"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onEdit"
+            android:text="@string/editTitle" />
+
+        <Button
+            android:id="@+id/buttonReserveTitle"
+            style="@style/generalButton"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onReserve"
+            android:text="@string/reserve" />
+
+        <Button
+            android:id="@+id/buttonAddLoanableTitle"
+            style="@style/generalButton"
+            android:textSize="15sp"
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="onAddLoanable"
+            android:text="@string/addLoanable" />
+    </LinearLayout>
+
+</LinearLayout>

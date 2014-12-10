@@ -52,6 +52,10 @@
             android:name=".SearchActivity"
             android:label="@string/title_activity_search" >
         </activity>
+        <activity
+            android:name=".BookInfoActivity"
+            android:label="@string/title_activity_book_info" >
+        </activity>
     </application>
 
 </manifest>

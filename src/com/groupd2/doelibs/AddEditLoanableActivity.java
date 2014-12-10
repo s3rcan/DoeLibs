@@ -66,7 +66,6 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 
 						location.setText(loanable.getLocation());
 						sublocation.setText(loanable.getSubLocation());
-
 					} catch (Exception e) {
 						Toast.makeText(AddEditLoanableActivity.this,
 								e.getMessage(), Toast.LENGTH_LONG).show();
@@ -106,7 +105,12 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 			CallAPI callAPI = new CallAPI() {
 				@Override
 				protected void onPostExecute(String result) {
-					// TODO make toast
+					// make toast
+					if(result.startsWith("true")){
+						Toast.makeText(AddEditLoanableActivity.this, "Added Succesfuly!", Toast.LENGTH_SHORT).show();
+					}else{
+						Toast.makeText(AddEditLoanableActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
+					}
 					// redirect
 					finish();
 				};
@@ -122,8 +126,14 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 			CallAPI callAPI = new CallAPI() {
 				@Override
 				protected void onPostExecute(String result) {
-					// TODO make toast
+					// make toast
+					if(result.startsWith("true")){
+						Toast.makeText(AddEditLoanableActivity.this, "Edited Succesfuly!", Toast.LENGTH_SHORT).show();
+					}else{
+						Toast.makeText(AddEditLoanableActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
+					}
 					// redirect
+					
 					finish();
 				};
 			};
@@ -135,5 +145,6 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 							+ sublocation, "Mode=edit");
 
 		}
+		btn.setClickable(false);
 	}
 }

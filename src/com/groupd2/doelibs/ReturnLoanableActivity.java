@@ -147,6 +147,11 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 			@Override
 			protected void onPostExecute(String result) {
 				// TODO check result and make toast
+				if(result.contains("Room")){
+					Toast.makeText(ReturnLoanableActivity.this, "Returned Succesfuly!", Toast.LENGTH_SHORT).show();
+				}else{
+					Toast.makeText(ReturnLoanableActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
+				}
 				finish();
 			}
 		};
@@ -155,5 +160,6 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 				"http://www.itutbildning.nu:10000/api/ReturnLoanable?token="
 						+ TokenHelper.getToken(ReturnLoanableActivity.this),
 				"Tag=" + tag.getText());
+		btn.setClickable(false);
 	}
 }

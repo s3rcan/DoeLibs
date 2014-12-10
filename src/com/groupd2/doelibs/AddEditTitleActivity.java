@@ -104,7 +104,9 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		return super.onOptionsItemSelected(item);
 	}
-
+	
+	private String toastText = "";
+	
 	public void onResult(View btn) {
 		String ISBN = this.ISBN.getText().toString();
 		String title = this.title.getText().toString();
@@ -117,14 +119,21 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 		String modeText = "";
 		if (mode == MODE_ADD) {
 			modeText = "add";
+			toastText = "Added Succesfuly!";
 		} else if (mode == MODE_EDIT) {
 			modeText = "edit";
+			toastText = "Edited Succesfuly!";
 		}
 		
 		CallAPI callAPI = new CallAPI(){
 			@Override
 			protected void onPostExecute(String result) {
-				//TODO check result make toast
+				// check result make toast
+				if(result.startsWith("true")){
+					Toast.makeText(AddEditTitleActivity.this, toastText, Toast.LENGTH_SHORT).show();
+				}else{
+					Toast.makeText(AddEditTitleActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
+				}
 				finish();
 			}
 		};
@@ -140,6 +149,7 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 				"EditionYear=" + editionYear,
 				"YearOfFirstEdition=" + yearOfFirstEdition,
 				"Mode=" + modeText);
+		btn.setClickable(false);
 	}
 	
 	public void onScan(View btn) {

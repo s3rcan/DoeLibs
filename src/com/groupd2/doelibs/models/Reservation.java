@@ -1,12 +1,12 @@
-package com.groupd2.doelibs;
+package com.groupd2.doelibs.models;
 
-import java.text.ParseException;
+import android.annotation.SuppressLint;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.json.JSONObject;
 
-public class Reservation {
+@SuppressLint("SimpleDateFormat") public class Reservation {
 	private String Title;
 	private Date Reserved;
 	private boolean Available;

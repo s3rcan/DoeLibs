@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.groupd2.doelibs.MainActivity;
 import com.groupd2.doelibs.MyBorrowingsActivity;

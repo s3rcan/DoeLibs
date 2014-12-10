@@ -45,5 +45,7 @@
     <string name="FilterByBorrower">Filter by borrower...</string>
     <string name="AvailableReservations">Available reservations</string>
     <string name="title_activity_handout_details">HandoutDetailsActivity</string>
+    <string name="title_activity_menu">MenuActivity</string>
+    <string name="BorrowerName">Borrowers name</string>
+    <string name="BookTag">Book Tag</string>
 
-</resources>

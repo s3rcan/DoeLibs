@@ -4,7 +4,7 @@
     <string name="app_name">DoeLibs</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_my_borrowings">MyBorrowingsActivity</string>
+    <string name="title_activity_my_borrowings">My Borrowings</string>
     <string name="title_activity_return_loanable">Return Loanable</string>
     <string name="loanable_tag">Tag</string>
     <string name="OK">OK</string>
@@ -12,7 +12,7 @@
     <string name="loanableTitle">Title</string>
     <string name="currentBorrower">Current Borrower</string>
     <string name="returnText">Return</string>
-    <string name="title_activity_add_edit_loanable">AddEditLoanableActivity</string>
+    <string name="title_activity_add_edit_loanable">Edit Loanable</string>
     <string name="titleAddLoanable">Add Loanable</string>
     <string name="titleEditLoanable">Edit Loanable</string>
     <string name="loanableInfo">Loanable Info</string>
@@ -37,14 +37,14 @@
     <string name="myInventory">My Inventory</string>
     <string name="logout">Logout</string>
     <string name="title_activity_login">Login</string>
-    <string name="title_activity_my_inventory">MyInventoryActivity</string>
+    <string name="title_activity_my_inventory">My Inventory</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="mainMenu">Main Menu</string>
     <string name="scan">Scan</string>
-    <string name="title_activity_handout">HandoutActivity</string>
+    <string name="title_activity_handout">Handout</string>
     <string name="FilterByBorrower">Filter by borrower...</string>
     <string name="AvailableReservations">Available reservations</string>
-    <string name="title_activity_handout_details">HandoutDetailsActivity</string>
+    <string name="title_activity_handout_details">Handout</string>
     <string name="title_activity_menu">MenuActivity</string>
     <string name="BorrowerName">Borrowers name</string>
     <string name="BookTag">Book Tag</string>

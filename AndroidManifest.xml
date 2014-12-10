@@ -52,6 +52,14 @@
             android:name=".SearchActivity"
             android:label="@string/title_activity_search" >
         </activity>
+        <activity
+            android:name=".HandoutActivity"
+            android:label="@string/title_activity_handout" >
+        </activity>
+        <activity
+            android:name=".HandoutDetailsActivity"
+            android:label="@string/title_activity_handout_details" >
+        </activity>
     </application>
 
 </manifest>

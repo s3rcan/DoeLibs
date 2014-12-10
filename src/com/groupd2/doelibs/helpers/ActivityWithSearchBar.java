@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.groupd2.doelibs.HandoutActivity;
 import com.groupd2.doelibs.MainActivity;
 import com.groupd2.doelibs.MyBorrowingsActivity;
 import com.groupd2.doelibs.MyInventoryActivity;
@@ -76,6 +77,10 @@ public class ActivityWithSearchBar extends Activity {
 		case R.id.menuLogout:
 			TokenHelper.removeToken(this);
 			intent = new Intent(this, MainActivity.class);
+			startActivity(intent);
+			return true;
+		case R.id.menuHandout:
+			intent = new Intent(this, HandoutActivity.class);
 			startActivity(intent);
 			return true;
 		default:

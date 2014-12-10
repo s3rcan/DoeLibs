@@ -171,4 +171,33 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 			}
 		}
 	}
+	
+	public void onGetBookInfo(View btn) {
+		String ISBN = this.ISBN.getText().toString();
+		CallAPI callAPI = new CallAPI() {
+			@Override
+			protected void onPostExecute(String result) {
+				try {
+					JSONObject jObject = new JSONObject(result);
+					Book book = new Book();
+					book.fillBookData(jObject);
+
+					AddEditTitleActivity.this.ISBN.setText(book.getISBN());
+					title.setText(book.getTitle());
+					author.setText(book.getAuthor());
+					publisher.setText(book.getPublisher());
+					editionNo.setText(book.getEditionNo());
+					editionYear.setText(book.getEditionYear());
+					yearOfFirstEdition
+							.setText(book.getYearOfFirstEdition());
+
+				} catch (Exception e) {
+					Toast.makeText(AddEditTitleActivity.this,
+							e.getMessage(), Toast.LENGTH_LONG).show();
+				}
+			}
+		};
+		callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
+				+ TokenHelper.getToken(AddEditTitleActivity.this), "Mode=data", "ISBN=" + ISBN);
+	}
 }

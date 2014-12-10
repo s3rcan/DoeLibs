@@ -44,32 +44,48 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal" >
+                    android:orientation="vertical" >
 
-                    <TextView
-                        style="@style/generalTextView"
-                        android:layout_width="0px"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="3"
-                        android:text="@string/ISBN" />
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal" >
 
-                    <EditText
-                        android:id="@+id/editTextTitleISBN"
-                        style="@style/generalEditText"
-                        android:layout_width="0px"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_weight="4"
-                        android:hint="@string/ISBN"
-                        android:inputType="text" />
-                    <Button
-                        android:id="@+id/scanISBN"
+                        <TextView
+                            style="@style/generalTextView"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:text="@string/ISBN" />
+
+                        <EditText
+                            android:id="@+id/editTextTitleISBN"
+                            style="@style/generalEditText"
+                            android:layout_width="0px"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:layout_weight="4"
+                            android:hint="@string/ISBN"
+                            android:inputType="text" />
+
+                        <Button
+                            android:id="@+id/scanISBN"
+                            style="@style/generalButton"
+                            android:layout_width="0px"
+                            android:layout_height="match_parent"
+                            android:layout_weight="2"
+                            android:onClick="onScan"
+                            android:text="@string/scan" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/getBookInfo"
                         style="@style/generalButton"
-                        android:layout_width="0px"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        android:onClick="onScan"
-                        android:text="@string/scan" />
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:onClick="onGetBookInfo"
+                        android:text="@string/getBookInfo" />
                 </LinearLayout>
 
                 <LinearLayout

@@ -44,3 +44,9 @@ bin/classes/com/groupd2/doelibs/adapters/BorrowingAdapter.class
 bin/classes/com/groupd2/doelibs/adapters/InventoryAdapter.class
 
 bin/classes/com/groupd2/doelibs/adapters/LoanableAdapter.class
+
+*.dex
+
+*.dex
+
+*.class

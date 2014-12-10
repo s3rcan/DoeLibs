@@ -15,6 +15,10 @@
         android:id="@+id/menuHandout"
         android:title="Handout"/>
     <item
+        android:id="@+id/menuAddTitle"
+        android:title="Add title"
+        />
+    <item
         android:id="@+id/menuLogout"
         android:title="@string/logout"/>
 

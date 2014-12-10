@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import com.groupd2.doelibs.AddEditTitleActivity;
 import com.groupd2.doelibs.HandoutActivity;
 import com.groupd2.doelibs.MainActivity;
 import com.groupd2.doelibs.MyBorrowingsActivity;
@@ -85,6 +86,11 @@ public class ActivityWithSearchBar extends Activity {
 			return true;
 		case R.id.menuHandout:
 			intent = new Intent(this, HandoutActivity.class);
+			startActivity(intent);
+			return true;
+		case R.id.menuAddTitle:
+			intent = new Intent(this,AddEditTitleActivity.class);
+			intent.putExtra("MODE", AddEditTitleActivity.MODE_ADD);
 			startActivity(intent);
 			return true;
 		default:

@@ -43,10 +43,6 @@ public class LoginActivity extends Activity {
 		EditText password = (EditText) findViewById(R.id.editTextPassword);
 
 		
-		if(username.getText().toString() == null)
-		{
-			
-		}
 		
 
 		final Context context = this;

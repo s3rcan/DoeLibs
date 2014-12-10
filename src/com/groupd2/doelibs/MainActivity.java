@@ -66,7 +66,7 @@ public class MainActivity extends ActivityWithSearchBar {
 	}
 
 	public void onClickMenu(View button) {
-		Intent intent = new Intent(this, MenuActivity.class);
-		startActivity(intent);
+		//Intent intent = new Intent(this, MenuActivity.class);
+		//startActivity(intent);
 	}
 }

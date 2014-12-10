@@ -100,6 +100,8 @@ public final class R {
     }
     public static final class string {
         public static final int AvailableReservations=0x7f06002a;
+        public static final int BookTag=0x7f06002e;
+        public static final int BorrowerName=0x7f06002d;
         public static final int FilterByBorrower=0x7f060029;
         public static final int ISBN=0x7f060019;
         public static final int OK=0x7f060006;
@@ -138,6 +140,7 @@ public final class R {
         public static final int title_activity_handout=0x7f060028;
         public static final int title_activity_handout_details=0x7f06002b;
         public static final int title_activity_login=0x7f060023;
+        public static final int title_activity_menu=0x7f06002c;
         public static final int title_activity_my_borrowings=0x7f060003;
         public static final int title_activity_my_inventory=0x7f060024;
         public static final int title_activity_return_loanable=0x7f060004;

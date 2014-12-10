@@ -65,10 +65,10 @@ public final class R {
         public static final int listViewSearchResults=0x7f090026;
         public static final int loginButton=0x7f090015;
         public static final int menuHandout=0x7f090032;
-        public static final int menuLogout=0x7f090031;
-        public static final int menuMainMenu=0x7f09002e;
-        public static final int menuMyBorrowings=0x7f09002f;
-        public static final int menuMyInventory=0x7f090030;
+        public static final int menuLogout=0x7f09002f;
+        public static final int menuMainMenu=0x7f090030;
+        public static final int menuMyBorrowings=0x7f09002e;
+        public static final int menuMyInventory=0x7f090031;
         public static final int scanISBN=0x7f090004;
         public static final int textReturnBorrowerName=0x7f090021;
         public static final int textReturnLoanableLocation=0x7f090023;
@@ -98,16 +98,17 @@ public final class R {
     public static final class menu {
         public static final int add_edit_loanable=0x7f080000;
         public static final int add_edit_title=0x7f080001;
-        public static final int doelibs_menu=0x7f080002;
-        public static final int handout=0x7f080003;
-        public static final int handout_details=0x7f080004;
-        public static final int login=0x7f080005;
-        public static final int main=0x7f080006;
-        public static final int menu=0x7f080007;
-        public static final int my_borrowings=0x7f080008;
-        public static final int my_inventory=0x7f080009;
-        public static final int return_loanable=0x7f08000a;
-        public static final int search=0x7f08000b;
+        public static final int doelibs_borrower_menu=0x7f080002;
+        public static final int doelibs_menu=0x7f080003;
+        public static final int handout=0x7f080004;
+        public static final int handout_details=0x7f080005;
+        public static final int login=0x7f080006;
+        public static final int main=0x7f080007;
+        public static final int menu=0x7f080008;
+        public static final int my_borrowings=0x7f080009;
+        public static final int my_inventory=0x7f08000a;
+        public static final int return_loanable=0x7f08000b;
+        public static final int search=0x7f08000c;
     }
     public static final class string {
         public static final int AvailableReservations=0x7f06002a;

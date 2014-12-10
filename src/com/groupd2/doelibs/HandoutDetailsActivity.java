@@ -93,7 +93,7 @@ public class HandoutDetailsActivity extends Activity {
 		CallAPI callAPI = new CallAPI() {
 			@Override
 			protected void onPostExecute(String result) {
-				
+				Toast.makeText(HandoutDetailsActivity.this, "Loan registered!", Toast.LENGTH_SHORT).show();
 				setResult(1);
 				finish();
 			}

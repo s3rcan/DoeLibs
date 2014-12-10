@@ -35,6 +35,12 @@
             android:text="Add/Edit"
             android:onClick="onClickAddEdit"
             />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:onClick="onClickMenu"
+            />
     </LinearLayout>
 
 </LinearLayout>

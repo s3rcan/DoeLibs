@@ -67,31 +67,35 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 			resultButton.setText(this.getText(R.string.edit));
 			// get title id extra
 			bookID = Integer.parseInt(intent.getStringExtra("bookId"));
-			
-			//fill existing data
-			CallAPI callAPI = new CallAPI(){
+
+			// fill existing data
+			CallAPI callAPI = new CallAPI() {
 				@Override
 				protected void onPostExecute(String result) {
 					try {
-						JSONObject jObject = new JSONObject(result).getJSONObject("book");
+						JSONObject jObject = new JSONObject(result)
+								.getJSONObject("book");
 						Book book = new Book(jObject);
-						
+
 						ISBN.setText(book.getISBN());
 						title.setText(book.getTitle());
 						author.setText(book.getAuthor());
 						publisher.setText(book.getPublisher());
 						editionNo.setText(book.getEditionNo());
 						editionYear.setText(book.getEditionYear());
-						yearOfFirstEdition.setText(book.getYearOfFirstEdition());
-						
+						yearOfFirstEdition
+								.setText(book.getYearOfFirstEdition());
+
 					} catch (Exception e) {
-						Toast.makeText(AddEditTitleActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
+						Toast.makeText(AddEditTitleActivity.this,
+								e.getMessage(), Toast.LENGTH_LONG).show();
 					}
-					
+
 				};
 			};
 			callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
-						+ TokenHelper.getToken(AddEditTitleActivity.this) + "&id=" + bookID);
+					+ TokenHelper.getToken(AddEditTitleActivity.this) + "&id="
+					+ bookID);
 		}
 	}
 
@@ -104,9 +108,9 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		return super.onOptionsItemSelected(item);
 	}
-	
+
 	private String toastText = "";
-	
+
 	public void onResult(View btn) {
 		String ISBN = this.ISBN.getText().toString();
 		String title = this.title.getText().toString();
@@ -114,8 +118,9 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 		String publisher = this.publisher.getText().toString();
 		String editionNo = this.editionNo.getText().toString();
 		String editionYear = this.editionYear.getText().toString();
-		String yearOfFirstEdition = this.yearOfFirstEdition.getText().toString();
-		
+		String yearOfFirstEdition = this.yearOfFirstEdition.getText()
+				.toString();
+
 		String modeText = "";
 		if (mode == MODE_ADD) {
 			modeText = "add";
@@ -124,34 +129,30 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 			modeText = "edit";
 			toastText = "Edited Succesfuly!";
 		}
-		
-		CallAPI callAPI = new CallAPI(){
+
+		CallAPI callAPI = new CallAPI() {
 			@Override
 			protected void onPostExecute(String result) {
 				// check result make toast
-				if(result.startsWith("true")){
-					Toast.makeText(AddEditTitleActivity.this, toastText, Toast.LENGTH_SHORT).show();
-				}else{
-					Toast.makeText(AddEditTitleActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
+				if (result.startsWith("true")) {
+					Toast.makeText(AddEditTitleActivity.this, toastText,
+							Toast.LENGTH_SHORT).show();
+				} else {
+					Toast.makeText(AddEditTitleActivity.this,
+							"Error: " + result, Toast.LENGTH_SHORT).show();
 				}
 				finish();
 			}
 		};
-		callAPI.execute(
-				"http://www.itutbildning.nu:10000/api/Title?token="
-						+ TokenHelper.getToken(AddEditTitleActivity.this),
-				"Id=" + bookID,
-				"ISBN=" + ISBN,
-				"Title=" + title,
-				"Author=" + author,
-				"Publisher=" + publisher,
-				"EditionNo=" + editionNo,
-				"EditionYear=" + editionYear,
-				"YearOfFirstEdition=" + yearOfFirstEdition,
-				"Mode=" + modeText);
+		callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
+				+ TokenHelper.getToken(AddEditTitleActivity.this), "Id="
+				+ bookID, "ISBN=" + ISBN, "Title=" + title, "Author=" + author,
+				"Publisher=" + publisher, "EditionNo=" + editionNo,
+				"EditionYear=" + editionYear, "YearOfFirstEdition="
+						+ yearOfFirstEdition, "Mode=" + modeText);
 		btn.setClickable(false);
 	}
-	
+
 	public void onScan(View btn) {
 		// implement scan algorithm here
 		IntentIntegrator integrator = new IntentIntegrator(this);

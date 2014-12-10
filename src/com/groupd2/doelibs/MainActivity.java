@@ -15,7 +15,7 @@ public class MainActivity extends ActivityWithSearchBar {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		//TokenHelper.removeToken(this); //For testing login functionallity, clear tokencache
+		//TokenHelper.removeToken(this); //For testing login functionality, clear tokencache
 
 		if (TokenHelper.getToken(this) == null) {
 			Login();
@@ -65,4 +65,8 @@ public class MainActivity extends ActivityWithSearchBar {
 		startActivity(intent);
 	}
 
+	public void onClickMenu(View button) {
+		Intent intent = new Intent(this, MenuActivity.class);
+		startActivity(intent);
+	}
 }

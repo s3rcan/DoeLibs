@@ -11,11 +11,12 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 import com.groupd2.doelibs.helpers.CallAPI;
 import com.groupd2.doelibs.helpers.TokenHelper;
 import com.groupd2.doelibs.models.HandoutItem;
 
-public class HandoutDetailsActivity extends Activity {
+public class HandoutDetailsActivity extends ActivityWithSearchBar {
 
 	private String _title;
 	private String _room;

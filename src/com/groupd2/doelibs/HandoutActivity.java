@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -117,6 +118,10 @@ public class HandoutActivity extends ActivityWithSearchBar {
 			}
 
 		});
+		
+		Intent intent = getIntent();
+		String BorrowerName=intent.getStringExtra("Extra_Borrower");
+		filterText.setText(BorrowerName);
 	}
 
 }

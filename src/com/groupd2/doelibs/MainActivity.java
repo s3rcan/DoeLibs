@@ -15,39 +15,55 @@ public class MainActivity extends ActivityWithSearchBar {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		//TokenHelper.removeToken(this); //For testing login functionality, clear tokencache
+		// TokenHelper.removeToken(this); //For testing login functionality,
+		// clear tokencache
 
-		if (TokenHelper.getToken(this) == null) {
+		if (TokenHelper.getToken(this) == null || TokenHelper.getLevel(this) == null) {
 			Login();
-		}
-		else
-			setContentView(R.layout.activity_main);
-
+		} else
+			selectActivity();
 	}
-@Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return super.onCreateOptionsMenu(menu);
-    }
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		return super.onCreateOptionsMenu(menu);
+	}
+
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		if (requestCode == 10) {
-			if (resultCode == 1)
-				setContentView(R.layout.activity_main);
+			if (resultCode == 1){
+				selectActivity();
+			}
 			else
 				Login();
 		}
 	};
 
+	
+	private void selectActivity()
+	{
+		if(TokenHelper.getLevel(this).equals("Lender"))
+		{
+			Intent intent = new Intent(this,MenuActivity.class);
+			startActivity(intent);
+		}
+		else
+		{
+			Intent intent = new Intent(this,MyBorrowingsActivity.class);
+			startActivity(intent);
+		}
+	}
+	
 	private void Login() {
 		Intent intent = new Intent(this, LoginActivity.class);
 		startActivityForResult(intent, 10);
 	}
 
-
 	@Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        return super.onOptionsItemSelected(item);
-    }
+	public boolean onOptionsItemSelected(MenuItem item) {
+		return super.onOptionsItemSelected(item);
+	}
 
 	public void onClickAddEdit(View button) {
 		Intent intent = new Intent(this, AddEditLoanableActivity.class);

@@ -66,7 +66,7 @@ public class LoginActivity extends Activity {
 						String token = jObject.getString("token");
 						TokenHelper.setToken(context, token);
 						m_LoginResult = 1;
-						TokenHelper.setLevel(jObject.getString("level"));
+						TokenHelper.setLevel(jObject.getString("level"), context);
 					}
 				} catch(Exception e) {
 					m_LoginResult = 2;

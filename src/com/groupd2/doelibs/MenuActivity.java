@@ -2,6 +2,7 @@ package com.groupd2.doelibs;
 
 import com.google.zxing.integration.IntentIntegrator;
 import com.google.zxing.integration.IntentResult;
+import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -12,7 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class MenuActivity extends Activity {
+public class MenuActivity extends ActivityWithSearchBar {
 
 	final String Extra_Borrower = "BorrowerName";
 	final String Extra_Tag = "Tag";
@@ -31,9 +32,7 @@ public class MenuActivity extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.menu, menu);
-		return true;
+		return super.onCreateOptionsMenu(menu);
 	}
 
 	@Override

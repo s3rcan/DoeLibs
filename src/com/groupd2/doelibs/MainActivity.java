@@ -15,7 +15,7 @@ public class MainActivity extends ActivityWithSearchBar {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		// TokenHelper.removeToken(this); //For testing login functionality,
+		 //TokenHelper.removeToken(this); //For testing login functionality,
 		// clear tokencache
 
 		if (TokenHelper.getToken(this) == null || TokenHelper.getLevel(this) == null) {

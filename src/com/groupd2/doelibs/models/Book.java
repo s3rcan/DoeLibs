@@ -18,6 +18,10 @@ public class Book {
 	private ArrayList<Loanable> loanables;
 	private ArrayList<Reservation> reservations;
 
+	public Book() {
+
+	}
+
 	public Book(JSONObject jObject) throws Exception {
 		JSONObject jBook = jObject.getJSONObject("book");
 
@@ -34,7 +38,7 @@ public class Book {
 				.getString("EditionYear") : "";
 		yearOfFirstEdition = jBook.getString("YearOfFirstEdition") != "null" ? jBook
 				.getString("YearOfFirstEdition") : "";
-				
+
 		reservedBySelf = jObject.getBoolean("reserveBySelf");
 
 		loanables = new ArrayList<Loanable>();
@@ -47,6 +51,22 @@ public class Book {
 		for (int i = 0; i < jArray.length(); i++)
 			reservations.add(new Reservation(jArray.getJSONObject(i)));
 
+	}
+
+	public void fillBookData(JSONObject jBook) throws Exception {
+		ISBN = jBook.getString("ISBN") != "null" ? jBook.getString("ISBN") : "";
+		title = jBook.getString("Title") != "null" ? jBook.getString("Title")
+				: "";
+		author = jBook.getString("Author") != "null" ? jBook
+				.getString("Author") : "";
+		publisher = jBook.getString("Publisher") != "null" ? jBook
+				.getString("Publisher") : "";
+		editionNo = jBook.getString("EditionNo") != "null" ? jBook
+				.getString("EditionNo") : "";
+		editionYear = jBook.getString("EditionYear") != "null" ? jBook
+				.getString("EditionYear") : "";
+		yearOfFirstEdition = jBook.getString("YearOfFirstEdition") != "null" ? jBook
+				.getString("YearOfFirstEdition") : "";
 	}
 
 	public boolean isReservedBySelf() {

@@ -56,5 +56,6 @@
     <string name="editTitle">Edit Title</string>
     <string name="reserve">Reserve</string>
     <string name="addLoanable">Add Loanable</string>
+    <string name="getBookInfo">Fetch Info</string>
 
 </resources>

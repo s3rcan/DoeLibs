@@ -2,6 +2,8 @@ package com.groupd2.doelibs;
 
 import org.json.JSONObject;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -106,13 +108,35 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 				@Override
 				protected void onPostExecute(String result) {
 					// make toast
-					if(result.startsWith("true")){
-						Toast.makeText(AddEditLoanableActivity.this, "Added Succesfuly!", Toast.LENGTH_SHORT).show();
-					}else{
-						Toast.makeText(AddEditLoanableActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
+					try {
+						int loanableId = Integer.parseInt(result.replace("\n",
+								""));
+
+						AlertDialog.Builder builder = new AlertDialog.Builder(
+								AddEditLoanableActivity.this);
+
+						builder.setMessage(
+								"Tag the book with " + loanableId + ".")
+								.setTitle("Added Succesfuly!")
+								.setPositiveButton("OK",
+										new DialogInterface.OnClickListener() {
+
+											@Override
+											public void onClick(
+													DialogInterface dialog,
+													int which) {
+												finish();
+											}
+										});
+
+						builder.create().show();
+
+					} catch (NumberFormatException e) {
+						Toast.makeText(AddEditLoanableActivity.this,
+								"Error: " + result, Toast.LENGTH_SHORT).show();
 					}
 					// redirect
-					finish();
+					// finish();
 				};
 			};
 			callAPI.execute(
@@ -127,13 +151,16 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 				@Override
 				protected void onPostExecute(String result) {
 					// make toast
-					if(result.startsWith("true")){
-						Toast.makeText(AddEditLoanableActivity.this, "Edited Succesfuly!", Toast.LENGTH_SHORT).show();
-					}else{
-						Toast.makeText(AddEditLoanableActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
+					if (result.startsWith("true")) {
+						Toast.makeText(AddEditLoanableActivity.this,
+								"Edited Succesfuly!", Toast.LENGTH_SHORT)
+								.show();
+					} else {
+						Toast.makeText(AddEditLoanableActivity.this,
+								"Error: " + result, Toast.LENGTH_SHORT).show();
 					}
 					// redirect
-					
+
 					finish();
 				};
 			};

@@ -53,6 +53,7 @@
             android:label="@string/title_activity_search" >
         </activity>
         <activity
+
             android:name=".HandoutActivity"
             android:label="@string/title_activity_handout" >
         </activity>
@@ -63,6 +64,10 @@
         <activity
             android:name=".MenuActivity"
             android:label="@string/title_activity_menu" >
+        </activity>
+        <activity>
+            android:name=".BookInfoActivity"
+            android:label="@string/title_activity_book_info" >
         </activity>
     </application>
 

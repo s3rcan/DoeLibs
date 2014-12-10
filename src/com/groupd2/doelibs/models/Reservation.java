@@ -7,6 +7,7 @@ import java.util.Date;
 import org.json.JSONObject;
 
 @SuppressLint("SimpleDateFormat") public class Reservation {
+	private String Reserver;
 	private String Title;
 	private Date Reserved;
 	private boolean Available;
@@ -33,6 +34,7 @@ import org.json.JSONObject;
 
 	public Reservation(JSONObject jObject) {
 		try {
+			this.Reserver = jObject.getString("Reserver");
 			this.Title = jObject.getString("Title");
 			this.Available = jObject.getBoolean("Available");
 
@@ -44,5 +46,13 @@ import org.json.JSONObject;
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+	}
+
+	public String getReserver() {
+		return Reserver;
+	}
+
+	public void setReserver(String reserver) {
+		Reserver = reserver;
 	}
 }

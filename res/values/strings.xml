@@ -50,5 +50,11 @@
     <string name="BookTag">Book Tag</string>
     <string name="BorrowersName">Borrowers Name</string>
     <string name="WriteTag">BookTag</string>
+    <string name="title_activity_book_info">Book Info</string>
+    <string name="reservations">Reservations</string>
+    <string name="loanables">Loanables</string>
+    <string name="editTitle">Edit Title</string>
+    <string name="reserve">Reserve</string>
+    <string name="addLoanable">Add Loanable</string>
 
 </resources>

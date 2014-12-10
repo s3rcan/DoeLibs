@@ -34,3 +34,13 @@ bin/DoeLibs.apk
 bin/resources.ap_
 
 gen/com/groupd2/doelibs/R.java
+
+bin/AndroidManifest.xml
+
+bin/classes.dex
+
+bin/classes/com/groupd2/doelibs/adapters/BorrowingAdapter.class
+
+bin/classes/com/groupd2/doelibs/adapters/InventoryAdapter.class
+
+bin/classes/com/groupd2/doelibs/adapters/LoanableAdapter.class

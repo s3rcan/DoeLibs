@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -95,8 +94,10 @@ public class SearchActivity extends ActivityWithSearchBar {
       public void onItemClick(AdapterView<?>adapter, View v, int position, long id){
         SearchResult i = ((SearchResultAdapter)adapter.getAdapter()).getItem(position);
         //Add functionallity for navigating to search result details.
+        Intent intent = new Intent(SearchActivity.this, BookInfoActivity.class);
+        intent.putExtra("bookId", i.getTitleId());
         
-        Toast.makeText(SearchActivity.this, i.getTitle(), Toast.LENGTH_SHORT).show();
+        startActivity(intent);
       }
 
     });

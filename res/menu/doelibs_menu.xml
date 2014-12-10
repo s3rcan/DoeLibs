@@ -12,10 +12,10 @@
         android:id="@+id/menuMyInventory"
         android:title="@string/myInventory"/>
     <item
-        android:id="@+id/menuLogout"
-        android:title="@string/logout"/>
-    <item
         android:id="@+id/menuHandout"
         android:title="Handout"/>
+    <item
+        android:id="@+id/menuLogout"
+        android:title="@string/logout"/>
 
 </menu>

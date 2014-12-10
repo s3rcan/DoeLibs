@@ -43,7 +43,11 @@ public class ActivityWithSearchBar extends Activity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.doelibs_menu, menu);
+		if(TokenHelper.getLevel(this).equals("Lender"))
+			getMenuInflater().inflate(R.menu.doelibs_menu, menu);
+		else if(TokenHelper.getLevel(this).equals("Borrower"))
+			getMenuInflater().inflate(R.menu.doelibs_borrower_menu,menu);
+		
 		return true;
 	}
 

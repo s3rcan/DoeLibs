@@ -48,4 +48,7 @@
     <string name="title_activity_menu">MenuActivity</string>
     <string name="BorrowerName">Borrowers name</string>
     <string name="BookTag">Book Tag</string>
+    <string name="BorrowersName">Borrowers Name</string>
+    <string name="WriteTag">BookTag</string>
+
 </resources>

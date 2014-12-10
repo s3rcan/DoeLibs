@@ -1,4 +1,4 @@
-package com.groupd2.doelibs;
+package com.groupd2.doelibs.adapters;
 
 
 import java.util.ArrayList;
@@ -9,12 +9,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-public class InventoryAdapter extends ArrayAdapter<InventoryItem> {
+import com.groupd2.doelibs.R;
+import com.groupd2.doelibs.models.Reservation;
+
+public class ReservationAdapter extends ArrayAdapter<Reservation> {
 	@SuppressWarnings("unused")
 	private Context context;
-	private ArrayList<InventoryItem> values;
+	private ArrayList<Reservation> values;
 	
-	public InventoryAdapter(Context context, ArrayList<InventoryItem> values) {
+	public ReservationAdapter(Context context, ArrayList<Reservation> values) {
 		super(context,R.layout.listview_twoline,R.id.Title,values);
 		this.context = context;
 		this.values = values;
@@ -26,7 +29,7 @@ public class InventoryAdapter extends ArrayAdapter<InventoryItem> {
 	}
 
 	@Override
-	public InventoryItem getItem(int position) {
+	public Reservation getItem(int position) {
 		return values.get(position);
 	}
 
@@ -39,11 +42,12 @@ public class InventoryAdapter extends ArrayAdapter<InventoryItem> {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		View view = super.getView(position,convertView,parent);
+		//LinearLayout layout = (LinearLayout)view.findViewById(R.id.ListViewTwoLineLayout);
 		TextView text1 = (TextView)view.findViewById(R.id.Title);
 		TextView text2 = (TextView)view.findViewById(R.id.Subtitle);
 		
-		text1.setText(values.get(position).getTitle());
-		text2.setText("Status: " + values.get(position).getStatus());
+		text1.setText(values.get(position).getTitle() + (values.get(position).isAvailable() ? " (Available)" : ""));
+		text2.setText("Reserved: " + values.get(position).getReservedAsString());
 		
 		
 		return view;

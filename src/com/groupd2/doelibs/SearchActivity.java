@@ -15,9 +15,11 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.groupd2.doelibs.adapters.SearchResultAdapter;
 import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 import com.groupd2.doelibs.helpers.CallAPI;
 import com.groupd2.doelibs.helpers.TokenHelper;
+import com.groupd2.doelibs.models.SearchResult;
 
 public class SearchActivity extends ActivityWithSearchBar {
 

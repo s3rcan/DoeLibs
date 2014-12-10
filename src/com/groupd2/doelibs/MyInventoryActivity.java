@@ -14,9 +14,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.groupd2.doelibs.adapters.InventoryAdapter;
 import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 import com.groupd2.doelibs.helpers.CallAPI;
 import com.groupd2.doelibs.helpers.TokenHelper;
+import com.groupd2.doelibs.models.InventoryItem;
 
 public class MyInventoryActivity extends ActivityWithSearchBar {
 

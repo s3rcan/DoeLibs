@@ -1,4 +1,4 @@
-package com.groupd2.doelibs;
+package com.groupd2.doelibs.models;
 
 import org.json.JSONException;
 import org.json.JSONObject;

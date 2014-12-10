@@ -10,9 +10,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import com.groupd2.doelibs.adapters.BorrowingAdapter;
+import com.groupd2.doelibs.adapters.ReservationAdapter;
 import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 import com.groupd2.doelibs.helpers.CallAPI;
 import com.groupd2.doelibs.helpers.TokenHelper;
+import com.groupd2.doelibs.models.Borrowing;
+import com.groupd2.doelibs.models.Reservation;
 
 public class MyBorrowingsActivity extends ActivityWithSearchBar {
 

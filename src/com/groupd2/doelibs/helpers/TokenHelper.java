@@ -9,7 +9,7 @@ public abstract class TokenHelper {
 	public static String getLevel(Context context){
 		SharedPreferences storage = context.getSharedPreferences("data", 0);
 
-		String level = storage.getString("level", null);
+		String level = storage.getString("level", "Borrower");
 		return level;
 	}
 	public static void setLevel(String level, Context context){

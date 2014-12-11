@@ -1,10 +1,5 @@
 package com.groupd2.doelibs;
 
-import com.google.zxing.integration.IntentIntegrator;
-import com.google.zxing.integration.IntentResult;
-import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
-
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +7,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.google.zxing.integration.IntentIntegrator;
+import com.google.zxing.integration.IntentResult;
+import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 
 public class MenuActivity extends ActivityWithSearchBar {
 
@@ -53,7 +52,7 @@ public class MenuActivity extends ActivityWithSearchBar {
 			IntentResult scanResult = IntentIntegrator.parseActivityResult(
 					requestCode, resultCode, data);
 			if (scanResult != null) {
-				Tag.setText(scanResult.toString());
+				Tag.setText(scanResult.getContents());
 			} else {
 				Toast.makeText(this, "Unable to read barcode!",
 						Toast.LENGTH_SHORT).show();

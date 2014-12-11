@@ -1,7 +1,5 @@
 package com.groupd2.doelibs.models;
 
-import java.text.SimpleDateFormat;
-
 import org.json.JSONObject;
 
 public class HandoutItem {

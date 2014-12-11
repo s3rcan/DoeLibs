@@ -1,6 +1,5 @@
 package com.groupd2.doelibs;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import com.groupd2.doelibs.helpers.ActivityWithSearchBar;
 import com.groupd2.doelibs.helpers.CallAPI;
 import com.groupd2.doelibs.helpers.TokenHelper;
-import com.groupd2.doelibs.models.HandoutItem;
 
 public class HandoutDetailsActivity extends ActivityWithSearchBar {
 
@@ -22,6 +20,7 @@ public class HandoutDetailsActivity extends ActivityWithSearchBar {
 	private String _room;
 	private String _locationCategory;
 	private String _tag;
+	@SuppressWarnings("unused")
 	private String _borrower;
 	private String _reservation;
 	

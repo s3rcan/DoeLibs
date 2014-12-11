@@ -164,7 +164,7 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 			IntentResult scanResult = IntentIntegrator.parseActivityResult(
 					requestCode, resultCode, data);
 			if (scanResult != null) {
-				ISBN.setText(scanResult.toString());
+				ISBN.setText(scanResult.getContents());
 			} else {
 				Toast.makeText(this, "Unable to read barcode!",
 						Toast.LENGTH_SHORT).show();

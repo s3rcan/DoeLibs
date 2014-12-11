@@ -133,7 +133,7 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 			IntentResult scanResult = IntentIntegrator.parseActivityResult(
 					requestCode, resultCode, data);
 			if (scanResult != null) {
-				tag.setText(scanResult.toString());
+				tag.setText(scanResult.getContents());
 			} else {
 				Toast.makeText(this, "Unable to read barcode!",
 						Toast.LENGTH_SHORT).show();

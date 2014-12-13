@@ -26,6 +26,7 @@ public class MenuActivity extends ActivityWithSearchBar {
 		setContentView(R.layout.activity_menu);
 
 		Borrower = (EditText) findViewById(R.id.BorrowerName);
+		
 		Tag = (EditText) findViewById(R.id.WriteTag);
 	}
 
@@ -69,7 +70,7 @@ public class MenuActivity extends ActivityWithSearchBar {
 	public void onWriteTag(View button) {
 
 		Intent intent = new Intent(this, ReturnLoanableActivity.class);
-		intent.putExtra(Extra_Tag, Tag.getText().toString());
+		intent.putExtra("Extra_Tag", Tag.getText().toString());
 		startActivity(intent);
 	}
 

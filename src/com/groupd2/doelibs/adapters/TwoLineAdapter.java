@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
 import com.groupd2.doelibs.R;
-import com.groupd2.doelibs.helpers.StringTuple;
+import com.groupd2.doelibs.models.StringTuple;
 
 public class TwoLineAdapter extends ArrayAdapter<StringTuple> {
 

@@ -2,6 +2,7 @@ package com.groupd2.doelibs.adapters;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,7 @@ public class HandoutAdapter extends ArrayAdapter<HandoutItem> implements
 
 		return new Filter() {
 
-			@Override
+			@SuppressLint("DefaultLocale") @Override
 			protected FilterResults performFiltering(CharSequence constraint) {
 				FilterResults results = new FilterResults();
 				ArrayList<HandoutItem> filteredValues = new ArrayList<HandoutItem>();
@@ -39,6 +40,7 @@ public class HandoutAdapter extends ArrayAdapter<HandoutItem> implements
 				return results;
 			}
 
+			@SuppressWarnings("unchecked")
 			@Override
 			protected void publishResults(CharSequence constraint,
 					FilterResults results) {
@@ -57,6 +59,7 @@ public class HandoutAdapter extends ArrayAdapter<HandoutItem> implements
 	private Context context;
 	private ArrayList<HandoutItem> values;
 	private ArrayList<HandoutItem> allvalues;
+	@SuppressWarnings("unchecked")
 	public HandoutAdapter(Context context, ArrayList<HandoutItem> values) {
 		super(context, R.layout.listview_twoline, R.id.Title, values);
 		this.context = context;

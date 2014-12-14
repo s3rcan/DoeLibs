@@ -55,6 +55,13 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 
 		reservations = (NonScrollableListView) findViewById(R.id.nonScrollableListBookInfoReservations);
 		loanables = (NonScrollableListView) findViewById(R.id.nonScrollableListBookInfoLoanables);
+		
+		if(TokenHelper.getLevel(this).equals("Borrower")){
+			Button tempButton = (Button) findViewById(R.id.buttonEditTitle);
+			tempButton.setVisibility(Button.GONE);
+			tempButton = (Button) findViewById(R.id.buttonAddLoanableTitle);
+			tempButton.setVisibility(Button.GONE);
+		}
 
 		Intent intent = getIntent();
 		bookID = Integer.parseInt(intent.getStringExtra("bookId"));

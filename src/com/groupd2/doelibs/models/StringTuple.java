@@ -1,4 +1,4 @@
-package com.groupd2.doelibs.helpers;
+package com.groupd2.doelibs.models;
 
 public class StringTuple {
 	String s1;

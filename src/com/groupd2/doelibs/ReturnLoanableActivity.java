@@ -54,6 +54,14 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 		//TODO get extra here from main page and fill data
 
 		setInfoVisibilty(false);
+		
+		Intent intent = getIntent();
+		String tagText = intent.getStringExtra("Extra_Tag");
+		
+		if(tagText != null){
+			tag.setText(tagText);
+			onOK(findViewById(R.id.buttonReturnOK));
+		}
 	}
 
 	private void setInfoVisibilty(boolean b) {

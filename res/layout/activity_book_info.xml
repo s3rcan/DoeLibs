@@ -53,14 +53,12 @@
 
                     <EditText
                         android:id="@+id/editTextTitleISBN"
-                        style="@style/generalEditText"
+                        style="@style/nonEditableEditText"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/ISBN"
-                        android:inputType="none" />
+                        android:hint="@string/ISBN" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -78,14 +76,12 @@
 
                     <EditText
                         android:id="@+id/editTextTitleTitle"
-                        style="@style/generalEditText"
+                        style="@style/nonEditableEditText"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/title"
-                        android:inputType="none" />
+                        android:hint="@string/title" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -103,14 +99,12 @@
 
                     <EditText
                         android:id="@+id/editTextTitleAuthor"
-                        style="@style/generalEditText"
+                        style="@style/nonEditableEditText"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/author"
-                        android:inputType="none" />
+                        android:hint="@string/author" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -128,14 +122,12 @@
 
                     <EditText
                         android:id="@+id/editTextTitlePublisher"
-                        style="@style/generalEditText"
+                        style="@style/nonEditableEditText"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/publisher"
-                        android:inputType="none" />
+                        android:hint="@string/publisher" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -153,14 +145,12 @@
 
                     <EditText
                         android:id="@+id/editTextTitleEditionNo"
-                        style="@style/generalEditText"
+                        style="@style/nonEditableEditText"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/editionNo"
-                        android:inputType="none" />
+                        android:hint="@string/editionNo" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -178,14 +168,12 @@
 
                     <EditText
                         android:id="@+id/editTextTitleEditionYear"
-                        style="@style/generalEditText"
+                        style="@style/nonEditableEditText"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/editionYear"
-                        android:inputType="none" />
+                        android:hint="@string/editionYear" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -203,14 +191,12 @@
 
                     <EditText
                         android:id="@+id/editTextTitleYearOfFirstEdition"
-                        style="@style/generalEditText"
+                        style="@style/nonEditableEditText"
                         android:layout_width="0px"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:layout_weight="2"
-                        android:clickable="false"
-                        android:hint="@string/yearOfFirstEdition"
-                        android:inputType="none" />
+                        android:hint="@string/yearOfFirstEdition" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -257,8 +243,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginRight="@dimen/activity_horizontal_margin"
-        android:orientation="horizontal"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
 
         <Button
             android:id="@+id/buttonEditTitle"
@@ -281,12 +267,12 @@
         <Button
             android:id="@+id/buttonAddLoanableTitle"
             style="@style/generalButton"
-            android:textSize="15sp"
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="onAddLoanable"
-            android:text="@string/addLoanable" />
+            android:text="@string/addLoanable"
+            android:textSize="15sp" />
     </LinearLayout>
 
 </LinearLayout>

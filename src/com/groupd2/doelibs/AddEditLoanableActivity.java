@@ -3,6 +3,7 @@ package com.groupd2.doelibs;
 import org.json.JSONObject;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -73,14 +74,15 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 								e.getMessage(), Toast.LENGTH_LONG).show();
 						finish();
 					}
-
+					progressDialog.dismiss();
 				};
 			};
 			callAPI.execute("http://www.itutbildning.nu:10000/api/Loanable?token="
 					+ TokenHelper.getToken(AddEditLoanableActivity.this)
 					+ "&id=" + loanableID);
+			progressDialog = ProgressDialog.show(this, "",
+					"Loading. Please wait...", true);
 		}
-
 	}
 
 	@Override
@@ -135,6 +137,7 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 						Toast.makeText(AddEditLoanableActivity.this,
 								"Error: " + result, Toast.LENGTH_SHORT).show();
 					}
+					progressDialog.dismiss();
 					// redirect
 					// finish();
 				};
@@ -145,6 +148,8 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 									.getToken(AddEditLoanableActivity.this),
 					"Id=" + titleID, "Location=" + location, "SubLocation="
 							+ sublocation, "Mode=add");
+			progressDialog = ProgressDialog.show(this, "", 
+	                "Loading. Please wait...", true);
 		} else if (mode == MODE_EDIT) {
 
 			CallAPI callAPI = new CallAPI() {
@@ -160,6 +165,7 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 						Toast.makeText(AddEditLoanableActivity.this,
 								"Error: " + result, Toast.LENGTH_SHORT).show();
 					}
+					progressDialog.dismiss();
 					// redirect
 				};
 			};
@@ -169,8 +175,11 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 									.getToken(AddEditLoanableActivity.this),
 					"Id=" + loanableID, "Location=" + location, "SubLocation="
 							+ sublocation, "Mode=edit");
+			progressDialog = ProgressDialog.show(this, "", 
+	                "Loading. Please wait...", true);
 
 		}
+		
 		btn.setClickable(false);
 	}
 }

@@ -13,10 +13,14 @@
         android:title="@string/myInventory"/>
     <item
         android:id="@+id/menuHandout"
-        android:title="Handout"/>
+        android:title="Book Handout"/>
+    <item
+        android:id="@+id/menuReturnLoanable"
+        android:title="Return Loanable"
+        />
     <item
         android:id="@+id/menuAddTitle"
-        android:title="Add title"
+        android:title="Add Title"
         />
     <item
         android:id="@+id/menuLogout"

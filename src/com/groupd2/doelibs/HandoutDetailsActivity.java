@@ -1,5 +1,6 @@
 package com.groupd2.doelibs;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -95,11 +96,14 @@ public class HandoutDetailsActivity extends ActivityWithSearchBar {
 			protected void onPostExecute(String result) {
 				Toast.makeText(HandoutDetailsActivity.this, "Loan registered!", Toast.LENGTH_SHORT).show();
 				setResult(1);
+				progressDialog.dismiss();
 				finish();
 			}
 		};
 		callAPI.execute("http://www.itutbildning.nu:10000/api/Handout?token="
 				+ TokenHelper.getToken(HandoutDetailsActivity.this), "tag=" + _tag, "reservation=" + _reservation);
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 
 	}
 }

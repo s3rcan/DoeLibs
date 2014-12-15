@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -59,11 +60,14 @@ public class MyInventoryActivity extends ActivityWithSearchBar {
         }
         
         afterGetInventory();
+        progressDialog.dismiss();
       }
     };
 
     callAPI.execute("http://www.itutbildning.nu:10000/api/Inventory?token="
         + TokenHelper.getToken(this));
+    progressDialog = ProgressDialog.show(this, "", 
+            "Loading. Please wait...", true);
 
   }
   

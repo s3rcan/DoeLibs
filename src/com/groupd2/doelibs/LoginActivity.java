@@ -3,6 +3,7 @@ package com.groupd2.doelibs;
 import org.json.JSONObject;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
@@ -17,6 +18,7 @@ import com.groupd2.doelibs.helpers.TokenHelper;
 public class LoginActivity extends Activity {
 
 	private int m_LoginResult;
+	private ProgressDialog progressDialog;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -69,11 +71,13 @@ public class LoginActivity extends Activity {
 				}
 				
 				afterLogin();
+				progressDialog.dismiss();
 			}
 		};
 		
 		callAPI.execute("http://www.itutbildning.nu:10000/api/Login?username=" + username.getText().toString() + "&password=" + password.getText().toString());
-		
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 		
 		
 		
@@ -89,6 +93,7 @@ public class LoginActivity extends Activity {
 				err.setText("Wrong username or password!");
 			else if(m_LoginResult == 2)
 				err.setText("Unable connect to DoeLibs service");
+			return;
 		}
 		setResult(1);
 		finish();

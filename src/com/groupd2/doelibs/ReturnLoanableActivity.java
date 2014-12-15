@@ -2,6 +2,7 @@ package com.groupd2.doelibs;
 
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -105,12 +106,15 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 					return;
 				}
 				afterGetLoan();
+				progressDialog.dismiss();
 			}
 		};
 		callAPI.execute("http://www.itutbildning.nu:10000/api/ReturnLoanable?token="
 				+ TokenHelper.getToken(ReturnLoanableActivity.this)
 				+ "&tag="
 				+ tagText);
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 
 	}
 
@@ -161,6 +165,7 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 				}else{
 					Toast.makeText(ReturnLoanableActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
 				}
+				progressDialog.dismiss();
 			}
 		};
 
@@ -168,6 +173,8 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 				"http://www.itutbildning.nu:10000/api/ReturnLoanable?token="
 						+ TokenHelper.getToken(ReturnLoanableActivity.this),
 				"Tag=" + tag.getText());
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 		btn.setClickable(false);
 	}
 }

@@ -155,13 +155,12 @@ public class AddEditLoanableActivity extends ActivityWithSearchBar {
 						Toast.makeText(AddEditLoanableActivity.this,
 								"Edited Succesfuly!", Toast.LENGTH_SHORT)
 								.show();
+						finish();
 					} else {
 						Toast.makeText(AddEditLoanableActivity.this,
 								"Error: " + result, Toast.LENGTH_SHORT).show();
 					}
 					// redirect
-
-					finish();
 				};
 			};
 			callAPI.execute(

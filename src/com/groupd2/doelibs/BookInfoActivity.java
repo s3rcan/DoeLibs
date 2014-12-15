@@ -40,6 +40,8 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 	private int bookID;
 	private Book book;
 
+	private Button reserve;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -55,6 +57,8 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 
 		reservations = (NonScrollableListView) findViewById(R.id.nonScrollableListBookInfoReservations);
 		loanables = (NonScrollableListView) findViewById(R.id.nonScrollableListBookInfoLoanables);
+		
+		reserve = (Button) findViewById(R.id.buttonReserveTitle);
 		
 		if(TokenHelper.getLevel(this).equals("Borrower")){
 			Button tempButton = (Button) findViewById(R.id.buttonEditTitle);
@@ -100,7 +104,8 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 		};
 		callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
 				+ TokenHelper.getToken(BookInfoActivity.this) + "&id=" + bookID);
-
+		
+		reserve.setEnabled(true);
 	}
 
 	private void afterGetReservations() {
@@ -144,6 +149,7 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 
 	public void onReserve(View btn) {
 		//reserve book algorithm here
+		btn.setEnabled(false);
 		if(book.isReservedBySelf()){
 			CallAPI callAPI = new CallAPI() {
 				@Override

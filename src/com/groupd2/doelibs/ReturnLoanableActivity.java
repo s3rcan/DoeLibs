@@ -157,10 +157,10 @@ public class ReturnLoanableActivity extends ActivityWithSearchBar {
 				// TODO check result and make toast
 				if(result.contains("Room")){
 					Toast.makeText(ReturnLoanableActivity.this, "Returned Succesfuly!", Toast.LENGTH_SHORT).show();
+					finish();
 				}else{
 					Toast.makeText(ReturnLoanableActivity.this, "Error: " + result, Toast.LENGTH_SHORT).show();
 				}
-				finish();
 			}
 		};
 

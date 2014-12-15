@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -99,11 +100,14 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 							Toast.LENGTH_LONG).show();
 					finish();
 				}
-
+				progressDialog.dismiss();
 			};
 		};
 		callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
 				+ TokenHelper.getToken(BookInfoActivity.this) + "&id=" + bookID);
+		
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 		
 		reserve.setEnabled(true);
 	}
@@ -154,6 +158,7 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 			CallAPI callAPI = new CallAPI() {
 				@Override
 				protected void onPostExecute(String result) {
+					progressDialog.dismiss();
 					init();
 				};
 			};
@@ -163,12 +168,15 @@ public class BookInfoActivity extends ActivityWithSearchBar {
 			CallAPI callAPI = new CallAPI() {
 				@Override
 				protected void onPostExecute(String result) {
+					progressDialog.dismiss();
 					init();
 				};
 			};
 			callAPI.execute("http://www.itutbildning.nu:10000/api/Reservations?token="
 					+ TokenHelper.getToken(BookInfoActivity.this), "titleId=" + bookID, "Mode=add");
 		}
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 	}
 
 	public void onAddLoanable(View btn) {

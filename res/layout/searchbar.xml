@@ -15,10 +15,7 @@
         android:focusable="true"
         android:focusableInTouchMode="true" />
 
-    <!--
-     :nextFocusUp and :nextFocusLeft have been set to the id of this component
-     to prevent the dummy from receiving focus again
-    -->
+    <!-- nextFocusUp and :nextFocusLeft have been set to the id of this component to prevent the dummy from receiving focus again -->
 
     <AutoCompleteTextView
         android:id="@+id/autotext"
@@ -35,10 +32,11 @@
         android:layout_gravity="center_vertical"
         android:layout_weight="1"
         android:hint="@string/searchBar"
+        android:imeOptions="actionSearch"
         android:lines="1"
         android:maxLines="1"
-        android:textColor="#fff"
-        android:imeOptions="actionSearch" />
+        android:singleLine="true"
+        android:textColor="#fff" />
 
     <Button
         android:id="@+id/buttonSearch"

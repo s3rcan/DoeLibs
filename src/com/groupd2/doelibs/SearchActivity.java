@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -74,11 +75,14 @@ public class SearchActivity extends ActivityWithSearchBar {
         }
         
         afterPerformSearch();
+        progressDialog.dismiss();
       }
     };
 
     callAPI.execute("http://www.itutbildning.nu:10000/api/Search?token="
         + TokenHelper.getToken(this) + "&search=" + search);
+    progressDialog = ProgressDialog.show(this, "", 
+            "Loading. Please wait...", true);
 
   }
   

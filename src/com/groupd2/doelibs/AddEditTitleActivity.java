@@ -3,6 +3,7 @@ package com.groupd2.doelibs;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -89,12 +90,14 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 						Toast.makeText(AddEditTitleActivity.this,
 								e.getMessage(), Toast.LENGTH_LONG).show();
 					}
-
+					progressDialog.dismiss();
 				};
 			};
 			callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
 					+ TokenHelper.getToken(AddEditTitleActivity.this) + "&id="
 					+ bookID);
+			progressDialog = ProgressDialog.show(this, "", 
+	                "Loading. Please wait...", true);
 		}
 	}
 
@@ -142,6 +145,7 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 							"Error: " + result, Toast.LENGTH_SHORT).show();
 					resultButton.setClickable(true);
 				}
+				progressDialog.dismiss();
 			}
 		};
 		callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
@@ -150,6 +154,8 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 				"Publisher=" + publisher, "EditionNo=" + editionNo,
 				"EditionYear=" + editionYear, "YearOfFirstEdition="
 						+ yearOfFirstEdition, "Mode=" + modeText);
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 		btn.setClickable(false);
 	}
 
@@ -201,9 +207,12 @@ public class AddEditTitleActivity extends ActivityWithSearchBar {
 					Toast.makeText(AddEditTitleActivity.this,
 							e.getMessage(), Toast.LENGTH_LONG).show();
 				}
+				progressDialog.dismiss();
 			}
 		};
 		callAPI.execute("http://www.itutbildning.nu:10000/api/Title?token="
 				+ TokenHelper.getToken(AddEditTitleActivity.this), "Mode=data", "ISBN=" + ISBN);
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 	}
 }

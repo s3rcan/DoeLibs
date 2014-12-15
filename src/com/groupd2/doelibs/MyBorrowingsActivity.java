@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -29,10 +30,10 @@ public class MyBorrowingsActivity extends ActivityWithSearchBar {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_my_borrowings);
 
-		
+		progressDialog = ProgressDialog.show(this, "", 
+                "Loading. Please wait...", true);
 		getBorrowings();
 		getReservations();
-		
 	}
 	
 	private void getBorrowings(){
@@ -53,7 +54,6 @@ public class MyBorrowingsActivity extends ActivityWithSearchBar {
 					Toast.makeText(MyBorrowingsActivity.this,
 							e.getMessage(), Toast.LENGTH_LONG).show();
 				}
-
 				afterGetBorrowings();
 			}
 		};
@@ -80,8 +80,8 @@ public class MyBorrowingsActivity extends ActivityWithSearchBar {
 					Toast.makeText(MyBorrowingsActivity.this,
 							e.getMessage(), Toast.LENGTH_LONG).show();
 				}
-
 				afterGetReservations();
+				progressDialog.dismiss();
 			}
 		};
 
